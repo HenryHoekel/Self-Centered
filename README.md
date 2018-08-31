@@ -75,9 +75,9 @@ The `scrape.py` script collects tweet ids. If you know a tweet's id number, you 
 ## If Python, Selenium, and Tweepy are already installed skip to step _
 
 1. Check python is installed by typing `python3`.
-⋅⋅* Install python if needed.
+* Install python if needed.
 2. Enter pip or pip3 by typing `pip` or `pip3` respectively.
-⋅⋅* Install pip or pip3 if needed.
+* Install pip or pip3 if needed.
 3. Type `pip3 install selenium` in your desired terminal.
 4. Type `pip3 install tweepy` in your desired terminal.
 5. In `scrape.py` edit lines 10-12 with your desired information.
