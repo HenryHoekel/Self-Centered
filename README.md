@@ -70,6 +70,23 @@ The `scrape.py` script collects tweet ids. If you know a tweet's id number, you 
 - Once parsing is complete, the terminal will output all "selfish," tweets along with a total selfish tweet count divided by total tweets
 - Enjoy!!
 
+# FINAL STEP BY STEP TUTORIAL
+
+## If Python, Selenium, and Tweepy are already installed skip to step _
+
+1. Check python is installed by typing `python3`.
+⋅⋅* Install python if needed.
+2. Enter pip or pip3 by typing `pip` or `pip3` respectively.
+⋅⋅* Install pip or pip3 if needed.
+3. Type `pip3 install selenium` in your desired terminal.
+4. Type `pip3 install tweepy` in your desired terminal.
+5. In `scrape.py` edit lines 10-12 with your desired information.
+6. Run `python3 scrape.py` in your desired terminal.
+7. In `get_metadata.py` edit line 12 for your desired Twitter handle.
+8. Run `python3 get_metadata.py` in your desired terminal.
+9. Edit line 7 with the desired filepath to .json file outputted from step 8.
+10. Read the output and enjoy your analysis of how selfish you are!!
+
 ## Disclaimers
 - This scraper is still not fully developed. The parser is very simple and can sometimes confuse non selfish tweets for selfish ones.
 - This application was purely developed for personal use and entertainment, not for commercial use.
