@@ -55,21 +55,18 @@ The `scrape.py` script collects tweet ids. If you know a tweet's id number, you 
   - Sign up for a developer account here https://dev.twitter.com/
   - Get your keys here: https://apps.twitter.com/
 - Put your keys into the `sample_api_keys.json` file
-- Change the name of `sample_api_keys.json` to `api_keys.json`
-- Open up `get_metadata.py` and edit the user variable (and save the file)
-- Run `python3 get_metadata.py`
 - This will get metadata for every tweet id in `all_ids.json`
 - It will create 4 files
   - `username.json` (master file with all metadata)
   - `username.zip` (a zipped file of the master file with all metadata)
   - `username_short.json` (smaller master file with relevant metadata fields)
   - `username.csv` (csv version of the smaller master file)
+- Make sure you put your keys in prior to running `automate_self_centered()` - It will now get the metadata for you
 
 # END OF TWITTER SCRAPER
 
 ## Now Time to Parse the Data
 
-- In your terminal of choice, type: `python3 jsonParse.py`
 - Once parsing is complete, the terminal will output all "selfish," tweets along with a total selfish tweet count divided by total tweets
 - Enjoy!!
 
@@ -77,6 +74,8 @@ The `scrape.py` script collects tweet ids. If you know a tweet's id number, you 
 
 ## If Python, Selenium, and Tweepy are already installed skip to step _
 
+- If First time: run steps 1-4
+- Else skip to steps 5-7
 1. Check python is installed by typing `python3`.
 * Install python if needed.
 2. Enter pip or pip3 by typing `pip` or `pip3` respectively.
