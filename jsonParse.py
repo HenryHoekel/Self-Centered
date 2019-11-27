@@ -3,81 +3,64 @@ import json
 
 from pprint import pprint
 
-## direct file path to .json file ##
-filepath = ''
+def parse_json(user):
 
-with open(filepath) as data_file:    
-    data = json.load(data_file)
+    ## direct file path to .json file ##
+    filepath = 'C:\\Users'
+    user = user.lower()
+    filepath = filepath + user + '.json'
 
-####  debug data if you wish #####
-#print data
-#pprint(data)
+    with open(filepath) as data_file:
+        data = json.load(data_file)
 
-#one_user = data['user'][0]['text']
+    ####  debug data if you wish #####
+    #print data
+    #pprint(data)
 
-tweets = []
+    #one_user = data['user'][0]['text']
 
-for user in data:
-    ### more debug ####
-    #print(user["text"])
-    tweets.append(user["text"])
+    tweets = []
 
-selfish_tweets = []
+    for user in data:
+        ### more debug ####
+        #print(user["text"])
+        tweets.append(user["text"])
 
-count=0
-for x in tweets:
-    if "I " in x:
-        count+=1
-        selfish_tweets.append(x)
-    elif "Me " in x:
-        count+=1
-        selfish_tweets.append(x)
-    elif "Myself " in x:
-        count+=1
-        selfish_tweets.append(x)
-    elif "me " in x:
-        count+=1
-        selfish_tweets.append(x)
-    elif "myself " in x:
-        count+=1
-        selfish_tweets.append(x)
-    elif "My " in x:
-        count+=1
-        selfish_tweets.append(x)
-    elif "my " in x:
-        count+=1
-        selfish_tweets.append(x)
+    selfish_tweets = []
 
-    
-print("COUNT ")
-print(count)
-print("/")
-print(len(tweets))
+    count=0
+    # Todo: Parse this better
+    for x in tweets:
+        if "I " in x:
+            count+=1
+            selfish_tweets.append(x)
+        elif "Me " in x:
+            count+=1
+            selfish_tweets.append(x)
+        elif "me " in x:
+            count+=1
+            selfish_tweets.append(x)
+        elif "Myself " in x:
+            count+=1
+            selfish_tweets.append(x)
+        elif "myself " in x:
+            count+=1
+            selfish_tweets.append(x)
+        elif "My " in x:
+            count+=1
+            selfish_tweets.append(x)
+        elif "my " in x:
+            count+=1
+            selfish_tweets.append(x)
 
-total = count / len(tweets)
+    # Print the Results :)
+    print('Selfish Tweets: ' + str(count) + '/' + str(len(tweets)))
+    total = count / len(tweets)
+    print('Percentage: ' + str(total))
+    pprint(selfish_tweets)
+    print('\n')
 
-print("TOTAL")
-print(total)
+    #### print all tweets (showoff) ###
+    #pprint(tweets)
 
-pprint(selfish_tweets)
-
-#### print all tweets (showoff) ###
-#pprint(tweets)
-
-"""
-test = "HI"
-if "I " in test:
-    print("YES")
-else:
-    print("no")
-"""
-    
-print("COUNT ")
-print(count)
-print("/")
-print(len(tweets))
-
-total = count / len(tweets)
-
-print("TOTAL")
-print(total)
+# end parse_json
